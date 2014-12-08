@@ -6,11 +6,11 @@ require 'to_cardinal/version'
 Gem::Specification.new do |spec|
   spec.name          = "to_cardinal"
   spec.version       = ToCardinal::VERSION
-  spec.authors       = ["edudepetris"]
+  spec.authors       = ["edu depetris"]
   spec.email         = ["edu.depetris.00@gmail.com"]
   spec.summary       = %q{Conver ordinal numbers to cardinal numbers}
   spec.description   = %q{Convert full ordinal numbers like 'second' to cardinal numbers like 2}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/edudepetris/to_cardinal"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "rake", "~> 10.4"
+  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_development_dependency "coveralls", "~> 0.7"
 end
