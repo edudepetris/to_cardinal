@@ -1,6 +1,12 @@
 # ToCardinal
 
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/edudepetris/to_cardinal.svg?branch=master)](https://travis-ci.org/edudepetris/to_cardinal)
+[![Coverage Status](https://img.shields.io/coveralls/edudepetris/to_cardinal.svg)](https://coveralls.io/r/edudepetris/to_cardinal)
+
+
+Ruby gem which will allow to convert from ordinal numbers to cardinal numbers.
+
+
 
 ## Installation
 
@@ -18,7 +24,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'to_cardinal'
+
+# some ordinal numbers to cardinals
+'first'.to_cardinal   # => 1
+'1st'.to_cardinal     # => 1
+'fourth'.to_cardinal  # => 4
+'4th'.to_cardinal     # => 4
+
+```
 
 ## Contributing
 
