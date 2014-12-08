@@ -4,7 +4,7 @@ module ToCardinal
 
   class ::String
     def to_cardinal
-      case self
+      case self.downcase
       when 'first', '1st'
         1
       when 'second', '2nd'
@@ -45,14 +45,6 @@ module ToCardinal
         19
       when 'twentieth', '20th'
         20
-      when 'twenty-first', '21st'
-        21
-      when 'twenty-second', '22nd'
-        22
-      when 'twenty-third', '23rd'
-        23
-      when 'twenty-fourth', '24th'
-        24
       when 'thirtieth', '30th'
         30
       when 'fortieth', '40th'
