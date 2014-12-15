@@ -1,7 +1,7 @@
 # ToCardinal
 
 [![Build Status](https://travis-ci.org/edudepetris/to_cardinal.svg?branch=master)](https://travis-ci.org/edudepetris/to_cardinal)
-[![Coverage Status](https://img.shields.io/coveralls/edudepetris/to_cardinal.svg)](https://coveralls.io/r/edudepetris/to_cardinal)
+[![Coverage Status](https://img.shields.io/coveralls/edudepetris/to_cardinal.svg)](https://coveralls.io/r/edudepetris/to_cardinal?branch=ed%2Fimprove)
 [![Gem Version](https://badge.fury.io/rb/to_cardinal.svg)](http://badge.fury.io/rb/to_cardinal)
 
 
