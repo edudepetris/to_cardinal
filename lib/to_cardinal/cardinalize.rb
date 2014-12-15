@@ -1,64 +1,63 @@
 module ToCardinal
+  EXPLICITS = {
+    'first'         => 1,
+    'second'        => 2,
+    'third'         => 3,
+    'ninth'         => 9,
+    'eleventh'      => 11,
+    'twelfth'       => 12,
+    'twentieth'     => 20,
+    'thirtieth'     => 30,
+    'fortieth'      => 40,
+    'fiftieth'      => 50,
+    'sixtieth'      => 60,
+    'seventieth'    => 70,
+    'eightieth'     => 80,
+    'ninetieth'     => 90,
+    'one hundredth' => 100
+  }
+
+  REGULARS = {
+    'thir'  => 3,
+    'four'  => 4,
+    'fif'   => 5,
+    'six'   => 6,
+    'seven' => 7,
+    'eigh'  => 8,
+    'nine'  => 9,
+    'ten'   => 10
+  }
+
+  TENS = {
+    'twenty'  => 20,
+    'thirty'  => 30,
+    'forty'   => 40,
+    'fifty'   => 50,
+    'sixty'   => 60,
+    'seventy' => 70,
+    'eighty'  => 80,
+    'ninety'  => 90
+  }
+
+  EXPLICIT_MATCHES = Hash[REGULARS.map {|k, v| [k.to_s + 'th', v] }].merge EXPLICITS
+  TENS_MATCH       = /(#{TENS.keys.join '|'})-/
+  ORDINAL          = /^(\d+)(?:st|nd|rd|th)$/
+
   def self.cardinalize(str)
-    case str.downcase
-    when 'first', '1st'
-      1
-    when 'second', '2nd'
-      2
-    when 'third', '3rd'
-      3
-    when 'fourth', '4th'
-      4
-    when 'fifth', '5th'
-      5
-    when 'sixth', '6th'
-      6
-    when 'seventh', '7th'
-      7
-    when 'eighth', '8th'
-      8
-    when 'ninth', '9th'
-      9
-    when 'tenth', '10th'
-      10
-    when 'eleventh', '11th'
-      11
-    when 'twelfth', '12th'
-      12
-    when 'thirteenth', '13th'
-      13
-    when 'fourteenth', '14th'
-      14
-    when 'fifteenth', '15th'
-      15
-    when 'sixteenth', '16th'
-      16
-    when 'seventeenth', '17th'
-      17
-    when 'eighteenth', '18th'
-      18
-    when 'nineteenth', '19th'
-      19
-    when 'twentieth', '20th'
-      20
-    when 'thirtieth', '30th'
-      30
-    when 'fortieth', '40th'
-      40
-    when 'fiftieth', '50th'
-      50
-    when 'sixtieth', '60th'
-      60
-    when 'seventieth', '70th'
-      70
-    when 'eightieth', '80th'
-        80
-    when 'ninetieth', '90th'
-      90
-    when 'hundredth', '100th'
-      100
-    else
-      -1
+    str.downcase!
+
+    ordinal          = str[ORDINAL, 1]
+    explicit_matches = EXPLICIT_MATCHES[str]
+    regular_match    = str[/^(.+)teenth$/, 1]
+
+    return ordinal.to_i if ordinal
+    return explicit_matches if explicit_matches
+    return 10 + REGULARS[regular_match] if regular_match
+
+    if tens = str[TENS_MATCH, 1]
+      sum = TENS[tens]
+      str.sub! "#{tens}-", ''
+      EXPLICIT_MATCHES.has_key?(str) ? sum + EXPLICIT_MATCHES[str] : nil
     end
   end
 
