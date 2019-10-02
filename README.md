@@ -83,7 +83,8 @@ require 'to_cardinal/core_ext/string'
 'fourth'.to_cardinal  # => 4
 '4th'.to_cardinal     # => 4
 ```
-##[How to Contribute](CONTRIBUTING.md)
+##Contributing
+[How to Contribute](CONTRIBUTING.md)
 
 ## License
 Distributed under the [MIT license](https://github.com/edudepetris/to_cardinal/blob/master/LICENSE.txt)
