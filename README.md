@@ -83,14 +83,7 @@ require 'to_cardinal/core_ext/string'
 'fourth'.to_cardinal  # => 4
 '4th'.to_cardinal     # => 4
 ```
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/to_cardinal/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+## [How to Contribute](CONTRIBUTING.md)
 
 ## License
 Distributed under the [MIT license](https://github.com/edudepetris/to_cardinal/blob/master/LICENSE.txt)
